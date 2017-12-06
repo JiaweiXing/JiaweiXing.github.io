@@ -259,21 +259,22 @@ var _hmt = _hmt || [];
 <li><p>基础数据类型 ：</p>
 <ul>
 <li><p>float ： 32位浮点数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">float _Angle = 1.0</span><br><span class="line">``` </span><br><span class="line">- half ： 16位浮点数据</span><br><span class="line">``` </span><br><span class="line">half _Angle = 1.0</span><br><span class="line">``` </span><br><span class="line">- int ： 32位整形数据</span><br><span class="line">``` </span><br><span class="line">int _Angle = 1</span><br><span class="line">``` </span><br><span class="line">- fixed ： 12位浮点数据</span><br><span class="line">``` </span><br><span class="line">fixed _Angle = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float _Angle = 1.0</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>bool ： 布尔数据，用于判断</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(_Angle == 0)</span><br><span class="line">&#123;</span><br><span class="line">  colors = diffuses.rgb;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>half ： 16位浮点数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">half _Angle = 1.0</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Sampler  纹理对象，6类 ： Sampler，sampler1D,sampler2D,sampler3D,samplerCUBE和samplerRECT</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sample2D _Diffuse;</span><br></pre></td></tr></table></figure>
+<li><p>int ： 32位整形数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int _Angle = 1</span><br><span class="line">``` </span><br><span class="line">- fixed ： 12位浮点数据</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>特殊的数据类型</p>
+<p>fixed _Angle = 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- bool ： 布尔数据，用于判断</span><br></pre></td></tr></table></figure>
+<p>if(_Angle == 0)<br>{<br>  colors = diffuses.rgb;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- Sampler  纹理对象，6类 ： Sampler，sampler1D,sampler2D,sampler3D,samplerCUBE和samplerRECT</span><br></pre></td></tr></table></figure>
+<p>sample2D _Diffuse;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 特殊的数据类型</span><br><span class="line">  - 向量 ： 一共拥有4种维度的向量，1-4之间</span><br><span class="line">  ``` </span><br><span class="line">  float3 a = float3(0,1,2);</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>向量 ： 一共拥有4种维度的向量，1-4之间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float3 a = float3(0,1,2);</span><br></pre></td></tr></table></figure>
-</li>
 <li><p>矩阵 ： 行和列都不得大于4和不得小于1</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> float2*2 a = &#123;sin@,0,1,3&#125;;</span><br><span class="line"> ``` </span><br><span class="line"> `矩阵在赋值的时候一定要人为的分开行与行之间的关系，但是程序只认识顺序的赋值`</span><br><span class="line"> - 数组 ： 因为CG是显卡操作语，没有内存，所以声明的时候要制定大小</span><br><span class="line"> ``` </span><br><span class="line"> float2 b[2];</span><br><span class="line"> int arrayLen = b.length; // 结果是2</span><br><span class="line"> float m[3][4];</span><br><span class="line"> arrayLen = m.length;// 结果是3；</span><br><span class="line"> arrayLen = m[1].length;// 结果是4；</span><br><span class="line"> ``` </span><br><span class="line"> -  结构体 ： 数据封装作用</span><br><span class="line"> ``` </span><br><span class="line"> struct a2v &#123;</span><br><span class="line">float4 vertex : POSITION;</span><br><span class="line">float3 normal : NORMAL;</span><br><span class="line">float4 texcoord : TEXCOORD0;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
