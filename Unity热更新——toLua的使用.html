@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xingjiawei.cn">
-  <title>Tag: Shader | 邢佳伟的博客</title>
+  <title>Unity热更新——toLua的使用 | 邢佳伟的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿拉">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邢佳伟的博客">
-<meta property="og:url" content="https://xingjiawei.cn/tags/Shader/index.html">
+  <meta name="description" content="热更新原理和热更新方案介绍http://blog.csdn.net/guofeng526/article/details/52662994 Lua环境安装 Linux系统上安装Linux&amp;amp;Mac上安装。只需要下载源码包并在终端上解压编译即可（以5.3.0版本为例）  12345curl -R -O ht">
+<meta name="keywords" content="ToLua">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity热更新——toLua的使用">
+<meta property="og:url" content="https://xingjiawei.cn/Unity热更新——toLua的使用.html">
 <meta property="og:site_name" content="邢佳伟的博客">
-<meta property="og:description" content="阿拉">
+<meta property="og:description" content="热更新原理和热更新方案介绍http://blog.csdn.net/guofeng526/article/details/52662994 Lua环境安装 Linux系统上安装Linux&amp;amp;Mac上安装。只需要下载源码包并在终端上解压编译即可（以5.3.0版本为例）  12345curl -R -O http://www.lua.org/ftp/lua-5.3.0.tar.gztar zxf">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ooo.0o0.ooo/2017/07/03/5959af3a72d72.png">
+<meta property="og:updated_time" content="2017-12-11T06:35:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邢佳伟的博客">
-<meta name="twitter:description" content="阿拉">
+<meta name="twitter:title" content="Unity热更新——toLua的使用">
+<meta name="twitter:description" content="热更新原理和热更新方案介绍http://blog.csdn.net/guofeng526/article/details/52662994 Lua环境安装 Linux系统上安装Linux&amp;amp;Mac上安装。只需要下载源码包并在终端上解压编译即可（以5.3.0版本为例）  12345curl -R -O http://www.lua.org/ftp/lua-5.3.0.tar.gztar zxf">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2017/07/03/5959af3a72d72.png">
   
     <link rel="alternative" href="/atom.xml" title="邢佳伟的博客" type="application/atom+xml">
   
@@ -174,64 +178,270 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Unity热更新——toLua的使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Shader学习笔记（一）.html" class="archive-article-date">
-  	<time datetime="2017-12-06T02:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Shader学习笔记（一）.html">Shader学习笔记（一）</a>
+    <h1 class="article-title" itemprop="name">
+      Unity热更新——toLua的使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/Unity热更新——toLua的使用.html" class="archive-article-date">
+  	<time datetime="2017-07-03T02:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="热更新原理和热更新方案介绍"><a href="#热更新原理和热更新方案介绍" class="headerlink" title="热更新原理和热更新方案介绍"></a>热更新原理和热更新方案介绍</h2><p><a href="http://blog.csdn.net/guofeng526/article/details/52662994" target="_blank" rel="noopener">http://blog.csdn.net/guofeng526/article/details/52662994</a></p>
+<h2 id="Lua环境安装"><a href="#Lua环境安装" class="headerlink" title="Lua环境安装"></a>Lua环境安装</h2><ul>
+<li>Linux系统上安装<br>Linux&amp;Mac上安装。只需要下载源码包并在终端上解压编译即可（以5.3.0版本为例）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -R -O http://www.lua.org/ftp/lua-5.3.0.tar.gz</span><br><span class="line">tar zxf lua-5.3.0.tar.gz</span><br><span class="line">cd lua-5.3.0</span><br><span class="line">make linux test</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Mac OS X系统上安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -R -O http://www.lua.org/ftp/lua-5.3.0.tar.gz</span><br><span class="line">tar zxf lua-5.3.0.tar.gz</span><br><span class="line">cd lua-5.3.0</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Windows系统上安装Lua</p>
+</li>
+</ul>
+<p>windows下可以使用一个叫”SciTE”的IDE环境来执行lua程序，下载地址为：</p>
+<p>Github 下载地址：<a href="https://github.com/rjpcomputing/luaforwindows/releases" target="_blank" rel="noopener">https://github.com/rjpcomputing/luaforwindows/releases</a><br>双击安装即可。</p>
+<p>Lua官方推荐的方法使用LuaDist:<a href="http://luadist.org" target="_blank" rel="noopener">http://luadist.org</a></p>
+<h2 id="Lua语法"><a href="#Lua语法" class="headerlink" title="Lua语法"></a>Lua语法</h2><p><a href="http://www.runoob.com/lua/lua-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/lua/lua-tutorial.html</a></p>
+<h2 id="C-与Lua语法的区别"><a href="#C-与Lua语法的区别" class="headerlink" title="C#与Lua语法的区别"></a>C#与Lua语法的区别</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Site</th>
+<th style="text-align:left">Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">声明变量</td>
+<td style="text-align:left">直接声明，不需要public int之类的</td>
+</tr>
+<tr>
+<td style="text-align:left">｛｝</td>
+<td style="text-align:left">do end </td>
+</tr>
+<tr>
+<td style="text-align:left">nil</td>
+<td style="text-align:left">表示无效值(在条件表达式中相当于false)</td>
+</tr>
+<tr>
+<td style="text-align:left">bool</td>
+<td style="text-align:left">fasle和true</td>
+</tr>
+<tr>
+<td style="text-align:left">number</td>
+<td style="text-align:left">表示双精度的实浮点数</td>
+</tr>
+<tr>
+<td style="text-align:left">string</td>
+<td style="text-align:left">字符串由一对双引号或单引号来表示</td>
+</tr>
+<tr>
+<td style="text-align:left">function</td>
+<td style="text-align:left">由C或Lua编写的函数</td>
+</tr>
+<tr>
+<td style="text-align:left">userdata</td>
+<td style="text-align:left">表示任意储存在变量中的C数据结构</td>
+</tr>
+<tr>
+<td style="text-align:left">thread</td>
+<td style="text-align:left">表示执行的独立线路，用于执行协同程序</td>
+</tr>
+<tr>
+<td style="text-align:left">注释</td>
+<td style="text-align:left">单行注释用：–多行注释用：–[[  –]]</td>
+</tr>
+</tbody>
+</table>
+<p>后续我会补全</p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><code>sublime</code></p>
+<p><code>Nodepad++</code></p>
+<p><code>Vs code</code></p>
+<p><code>...</code></p>
+<h2 id="C-和Lua之间的调用"><a href="#C-和Lua之间的调用" class="headerlink" title="C#和Lua之间的调用"></a>C#和Lua之间的调用</h2><h3 id="C-调用lua-LuaState-变量名-函数名"><a href="#C-调用lua-LuaState-变量名-函数名" class="headerlink" title="C#调用lua:LuaState[变量名/函数名]"></a><code>C#调用lua</code>:LuaState[变量名/函数名]</h3><p>1.LuaState</p>
+<ul>
+<li><p>执行lua代码段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DoString(String)</span><br><span class="line">DoFile(.lua文件名)</span><br><span class="line">Require（.lua文件名（但没有.lua后缀））</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取lua函数或者表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LuaFunction func = lua.GetFunction(函数名); 或者  LuaFunction func = lua[函数名] as LuaFunction;</span><br><span class="line">LuaTable table = lua.GetTable(表名);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Start():如果需要使用wrap,则需要调用该方法</p>
+</li>
+</ul>
+<p>2.LuaFunction<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Call();</span><br></pre></td></tr></table></figure></p>
+<p>3.LuaTable<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LuaTable[变量名/函数名]</span><br><span class="line">ToArray()</span><br></pre></td></tr></table></figure></p>
+<h3 id="lua调用c"><a href="#lua调用c" class="headerlink" title="lua调用c#"></a><code>lua调用c#</code></h3><p>在C#中将引用传递到lua中</p>
+<p>1.通过”.”来使用非静态的变量以及静态的变量与方法</p>
+<p>2.通过”:”来使用非静态的方法</p>
+<p>3.通过”{}”来传递数组给c#</p>
+<p>4.创建GameObject：newObject(变量)</p>
+<p>5.摧毁GameObject：destroy(变量) </p>
+<p>6.获取组件：GetComponent(‘LuaBehaviour’)</p>
+<h2 id="LuaFramework"><a href="#LuaFramework" class="headerlink" title="LuaFramework"></a>LuaFramework</h2><p>我们只需要在tolua里面写属于自己模块部分的逻辑就能简单的实现热更新。</p>
+<p>eg.<br><img src="https://ooo.0o0.ooo/2017/07/03/5959af3a72d72.png" alt=""></p>
+<p><a href="http://www.ulua.org/" target="_blank" rel="noopener">Lua官方地址</a></p>
+<ul>
+<li>从<a href="https://github.com/topameng/tolua" target="_blank" rel="noopener">https://github.com/topameng/tolua</a>上把代码下载下来，可以clone也可以直接下载zip并解压</li>
+<li>把Assets下的文件复制到项目里的Assets目录下</li>
+<li>把Unity5.x下的文件也复制过去，覆盖掉Plugins目录（OSX系统需要注意是合并而不是替换）</li>
+<li>Assets\ToLua\Examples这里面一共是tolua作者给的24个例子<br>（关于例子的介绍和解释在这里：<a href="http://doc.ulua.org/article/ulua/toluadeexamples01helloworld.html" target="_blank" rel="noopener">http://doc.ulua.org/article/ulua/toluadeexamples01helloworld.html</a>)</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Shader</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ToLua</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xingjiawei.cn/Unity热更新——toLua的使用.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/Shader学习笔记（一）.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Shader学习笔记（一）
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#热更新原理和热更新方案介绍"><span class="toc-number">1.</span> <span class="toc-text">热更新原理和热更新方案介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lua环境安装"><span class="toc-number">2.</span> <span class="toc-text">Lua环境安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lua语法"><span class="toc-number">3.</span> <span class="toc-text">Lua语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-与Lua语法的区别"><span class="toc-number">4.</span> <span class="toc-text">C#与Lua语法的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量"><span class="toc-number">4.1.</span> <span class="toc-text">变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#工具"><span class="toc-number">5.</span> <span class="toc-text">工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-和Lua之间的调用"><span class="toc-number">6.</span> <span class="toc-text">C#和Lua之间的调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-调用lua-LuaState-变量名-函数名"><span class="toc-number">6.1.</span> <span class="toc-text">C#调用lua:LuaState[变量名/函数名]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lua调用c"><span class="toc-number">6.2.</span> <span class="toc-text">lua调用c#</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LuaFramework"><span class="toc-number">7.</span> <span class="toc-text">LuaFramework</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+    <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151169"></script>
+<!-- UY END -->
+    
+  
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -263,9 +473,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
