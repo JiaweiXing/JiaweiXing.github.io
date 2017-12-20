@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://xingjiawei.cn">
   <title>Shader学习笔记（一） | 邢佳伟的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图形编程历史渲染流水线目前最新的可编程图形硬件支持功能： 支持顶点和片段的可编程能力  支持IEEE32位的浮点运算（IEEE32是国际电工委员会置顶的浮点书表示方式，主要内容是用四个字节来表示浮点数，可以表示的数据的负数范围是(-22)^128~-2^127,2^-127~22^128）  支持四元向量和四阶矩阵  ">
+  <meta name="description" content="简单介绍图形开发流程和CG语法">
 <meta name="keywords" content="Shader,学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shader学习笔记（一）">
 <meta property="og:url" content="https://xingjiawei.cn/2017/12/06/Shader学习笔记（一）/index.html">
 <meta property="og:site_name" content="邢佳伟的博客">
-<meta property="og:description" content="图形编程历史渲染流水线目前最新的可编程图形硬件支持功能： 支持顶点和片段的可编程能力  支持IEEE32位的浮点运算（IEEE32是国际电工委员会置顶的浮点书表示方式，主要内容是用四个字节来表示浮点数，可以表示的数据的负数范围是(-22)^128~-2^127,2^-127~22^128）  支持四元向量和四阶矩阵  提供分支和循环的控制语句  具有高带宽的内存处理能力  支持1D,2D,3D的纹">
+<meta property="og:description" content="简单介绍图形开发流程和CG语法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/JiaweiXing/MarkdownImage/master/Image/GPU%E6%B5%81%E6%B0%B4%E7%BA%BF.png">
 <meta property="og:image" content="https://github.com/JiaweiXing/MarkdownImage/raw/master/Image/%E8%AF%AD%E4%B9%89.png">
-<meta property="og:updated_time" content="2017-12-06T07:02:53.000Z">
+<meta property="og:updated_time" content="2017-12-20T08:40:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shader学习笔记（一）">
-<meta name="twitter:description" content="图形编程历史渲染流水线目前最新的可编程图形硬件支持功能： 支持顶点和片段的可编程能力  支持IEEE32位的浮点运算（IEEE32是国际电工委员会置顶的浮点书表示方式，主要内容是用四个字节来表示浮点数，可以表示的数据的负数范围是(-22)^128~-2^127,2^-127~22^128）  支持四元向量和四阶矩阵  提供分支和循环的控制语句  具有高带宽的内存处理能力  支持1D,2D,3D的纹">
+<meta name="twitter:description" content="简单介绍图形开发流程和CG语法">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/JiaweiXing/MarkdownImage/master/Image/GPU%E6%B5%81%E6%B0%B4%E7%BA%BF.png">
   
     <link rel="alternative" href="/atom.xml" title="邢佳伟的博客" type="application/atom+xml">
@@ -199,7 +199,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="图形编程历史"><a href="#图形编程历史" class="headerlink" title="图形编程历史"></a><a href="https://www.cnblogs.com/maple-share/p/5382228.html" target="_blank" rel="noopener">图形编程历史</a></h2><h2 id="渲染流水线"><a href="#渲染流水线" class="headerlink" title="渲染流水线"></a>渲染流水线</h2><h3 id="目前最新的可编程图形硬件支持功能："><a href="#目前最新的可编程图形硬件支持功能：" class="headerlink" title="目前最新的可编程图形硬件支持功能："></a>目前最新的可编程图形硬件支持功能：</h3><ul>
+        <p>简单介绍图形开发流程和CG语法<br><a id="more"></a></p>
+<h2 id="图形编程历史"><a href="#图形编程历史" class="headerlink" title="图形编程历史"></a><a href="https://www.cnblogs.com/maple-share/p/5382228.html" target="_blank" rel="noopener">图形编程历史</a></h2><h2 id="渲染流水线"><a href="#渲染流水线" class="headerlink" title="渲染流水线"></a>渲染流水线</h2><h3 id="目前最新的可编程图形硬件支持功能："><a href="#目前最新的可编程图形硬件支持功能：" class="headerlink" title="目前最新的可编程图形硬件支持功能："></a>目前最新的可编程图形硬件支持功能：</h3><ul>
 <li>支持顶点和片段的可编程能力 </li>
 <li>支持IEEE32位的浮点运算（IEEE32是国际电工委员会置顶的浮点书表示方式，主要内容是用四个字节来表示浮点数，可以表示的数据的负数范围是(-2<em>2)^128~-2^127,2^-127~2</em>2^128） </li>
 <li>支持四元向量和四阶矩阵 </li>
