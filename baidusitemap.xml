@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://xingjiawei.cn/2017/12/22/UnityShader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-UnityShader%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2017-12-22T10:06:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>UnityShader学习笔记-UnityShader结构</title>
+        <pubTime>2017-12-22T09:58:19.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://xingjiawei.cn/2017/12/06/Unity%20Shader%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%BE%E5%BD%A2%E5%9F%BA%E7%A1%80%E5%92%8CCG%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2017-12-22T10:00:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Unity Shader 学习笔记-图形基础和CG语法</title>
+        <pubTime>2017-12-06T02:40:13.000Z</pubTime>
+        
+        <tag>Shader</tag>
+         
+        <tag>学习笔记</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://xingjiawei.cn/2017/12/20/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B/</loc>
     <lastmod>2017-12-21T02:26:04.000Z</lastmod>
     <data>
@@ -31,25 +65,6 @@
         <pubTime>2017-07-03T02:40:13.000Z</pubTime>
         
         <tag>ToLua</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://xingjiawei.cn/2017/12/06/Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2017-12-20T08:40:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>Shader学习笔记（一）</title>
-        <pubTime>2017-12-06T02:40:13.000Z</pubTime>
-        
-        <tag>Shader</tag>
-         
-        <tag>学习笔记</tag>
          
          
            

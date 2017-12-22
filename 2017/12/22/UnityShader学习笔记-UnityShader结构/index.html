@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://xingjiawei.cn">
-  <title>Tag: ToLua | 邢佳伟的博客</title>
+  <title>UnityShader学习笔记-UnityShader结构 | 邢佳伟的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="阿拉">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邢佳伟的博客">
-<meta property="og:url" content="https://xingjiawei.cn/tags/ToLua/index.html">
+  <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UnityShader学习笔记-UnityShader结构">
+<meta property="og:url" content="https://xingjiawei.cn/2017/12/22/UnityShader学习笔记-UnityShader结构/index.html">
 <meta property="og:site_name" content="邢佳伟的博客">
-<meta property="og:description" content="阿拉">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-22T10:06:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邢佳伟的博客">
-<meta name="twitter:description" content="阿拉">
+<meta name="twitter:title" content="UnityShader学习笔记-UnityShader结构">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
   
     <link rel="alternative" href="/atom.xml" title="邢佳伟的博客" type="application/atom+xml">
   
@@ -178,60 +179,174 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-UnityShader学习笔记-UnityShader结构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/03/Unity热更新——toLua的使用/" class="archive-article-date">
-  	<time datetime="2017-07-03T02:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/03/Unity热更新——toLua的使用/">Unity热更新——toLua的使用</a>
+    <h1 class="article-title" itemprop="name">
+      UnityShader学习笔记-UnityShader结构
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ToLua</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2017/12/22/UnityShader学习笔记-UnityShader结构/" class="archive-article-date">
+  	<time datetime="2017-12-22T09:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里指定shader的名字，不要求跟文件名保持一致</span></span><br><span class="line">Shader "Test/UnityShader结构"</span><br><span class="line">&#123;</span><br><span class="line">	Properties</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 属性 </span></span><br><span class="line">		_Color("Color",Color)=(1,1,1,1) //float4</span><br><span class="line">		_Vector("Vector",Vector)=(1,2,3,4) //float4</span><br><span class="line">		_Int("Int",Int)= 34234 //float</span><br><span class="line">		_Float("Float",Float) = 4.5 //float</span><br><span class="line">		_Range("Range",Range(1,11))=6 //float</span><br><span class="line">		_2D("Texture",2D) = "red"&#123;&#125; //sampler2D</span><br><span class="line">		_Cube("Cube",Cube) = "white"&#123;&#125; //samplerCube</span><br><span class="line">		_3D("Texure",3D) = "black"&#123;&#125; //sampler3D</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 内部变量名（"界面名称"，属性类型）=属性默认值; </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//SubShader（子着色器）可以写很多个 显卡运行效果的时候，从第一个SubShader开始，如果第一个SubShader里面的效果都可以实现，那么就使用第一个SubShader，如果显卡这个SubShader里面某些效果它实现不了，它会自动去运行下一个SubShader</span></span><br><span class="line">	SubShader</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 着色器修饰 硬件将通过判定这些标签来决定什么时候调用该着色器。包括以下类型：</span></span><br><span class="line">		<span class="comment">// RenderType渲染方式</span></span><br><span class="line">		<span class="comment">// Opaque：不透明（法线、自发光、反射、地形Shader）</span></span><br><span class="line">		<span class="comment">// Transparent：半透明（透明、粒子、字体、地形添加通道Shader）</span></span><br><span class="line">		<span class="comment">// TransparentCutout：遮罩透明（透明裁切、双通道植物Shader）</span></span><br><span class="line">		<span class="comment">// Background：天空盒Shader</span></span><br><span class="line">		<span class="comment">// Overlay：GUI纹理、光晕、闪光Shader</span></span><br><span class="line">		<span class="comment">// TreeOpaque：地形引擎——树皮</span></span><br><span class="line">		<span class="comment">// TreeTransparentCutout：地形引擎——树叶</span></span><br><span class="line">		<span class="comment">// TreeBillboard：地形引擎——公告牌（始终面向摄像机）式树木</span></span><br><span class="line">		<span class="comment">// Grass：地形引擎——草</span></span><br><span class="line">		<span class="comment">// GrassBillboard：地形引擎——公告牌（始终面向摄像机）式草</span></span><br><span class="line">		<span class="comment">// Queue 指定渲染顺序队列: </span></span><br><span class="line">		<span class="comment">// Background 通常用于SkyBox; </span></span><br><span class="line">		<span class="comment">// Geometry 最常用的一种，用来渲染非透明物体（普通情况下，场景中的绝大多数物体应该是非透明的） </span></span><br><span class="line">		<span class="comment">// AlphaTest - 用来渲染经过Alpha Test的像素，单独为AlphaTest设定一个Queue是出于对效率的考虑 </span></span><br><span class="line">		<span class="comment">// Transparent 以从后往前的顺序渲染透明物体 </span></span><br><span class="line">		<span class="comment">// Overlay 用来渲染叠加的效果，是渲染的最后阶段（比如镜头光晕等特效）</span></span><br><span class="line">		<span class="comment">// “ForceNoShadowCasting”=”True” 从不产生阴影</span></span><br><span class="line">		Tags &#123; "RenderType"="Opaque" &#125;</span><br><span class="line">		<span class="comment">// LOD是Level of Detail的缩写，在这里例子里我们指定了其为200（其实这是Unity的内建Diffuse着色器的设定值）。这个数值决定了我们能用什么样的Shader。</span></span><br><span class="line">		<span class="comment">// VertexLit及其系列 = 100 </span></span><br><span class="line">		<span class="comment">// Decal, Reflective VertexLit = 150 </span></span><br><span class="line">		<span class="comment">// Diffuse = 200 </span></span><br><span class="line">		<span class="comment">// Bumped VertexLit = 250 </span></span><br><span class="line">		<span class="comment">// Bumped, Specular = 300 </span></span><br><span class="line">		<span class="comment">// Bumped Specular = 400 </span></span><br><span class="line">		<span class="comment">// Parallax = 500 </span></span><br><span class="line">		<span class="comment">// Parallax Specular = 600   </span></span><br><span class="line">		LOD <span class="number">100</span></span><br><span class="line">		<span class="comment">//至少有一个Pass</span></span><br><span class="line">		Pass</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">// 这里还会标注RenderState.设定显示各种状态： </span></span><br><span class="line">			<span class="comment">// Cull ( Back,Front,Off) 设置多边形剔除模式 </span></span><br><span class="line">			<span class="comment">// ZTest (Less,Greater,LEqual,GEqua,Equal,NotEqual,Always) 默认是LEqual. </span></span><br><span class="line">			<span class="comment">// ZWrite (On,Off) 设置深度写模式，是否此物体的像素深度会被记录（默认记录） Off,通常用于半透明物体。 </span></span><br><span class="line">			<span class="comment">// AlphaTest(Less,Greater,LEqual,GEqual,Equal,NotEqual,Always) 开启alpha测试 </span></span><br><span class="line">			<span class="comment">// Blend SourceB./endMode DestB/endMode 设置alpha混合模式。（以下为相关属性说明） </span></span><br><span class="line">			<span class="comment">// One 值为1，使用此设置来让源或是目标颜色完全的通过。 </span></span><br><span class="line">			<span class="comment">// Zero 值为0 ，使用此设置来删除源或目标值。 </span></span><br><span class="line">			<span class="comment">// SroColor 此阶段的值是乘以源颜色的值。 </span></span><br><span class="line">			<span class="comment">// SrcAlpha 此阶段的值是乘以源alpha的值。 </span></span><br><span class="line">			<span class="comment">// DstColor 此阶段的值是乘以帧缓冲区源颜色的值。 </span></span><br><span class="line">			<span class="comment">// DstAlpha 此阶段的值是乘以帧缓冲区源alpha的值。 </span></span><br><span class="line">			<span class="comment">// OneMinusSrcColor 此阶段的值是乘以（1-source color) </span></span><br><span class="line">			<span class="comment">// OneMinusSrcAlpha 此阶段的值是乘以(1-source alpha) </span></span><br><span class="line">			<span class="comment">// OneMinusDstColor 此阶段的值是乘以(1-destination color) </span></span><br><span class="line">			<span class="comment">// OneMinusDstAlpha 此阶段的值是乘以（1-destination alpha)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			<span class="comment">//在这里编写shader代码  HLSLPROGRAM</span></span><br><span class="line">			CGPROGRAM<span class="comment">//使用CG语言编写shader代码</span></span><br><span class="line">			<span class="comment">// 声明一个以vert为名字的函数的顶点程序 </span></span><br><span class="line">			<span class="meta">#pragma vertex vert</span></span><br><span class="line">			<span class="comment">// 声明一个以frag为名字的函数的片元程序。</span></span><br><span class="line">			<span class="meta">#pragma fragment frag</span></span><br><span class="line">			<span class="comment">// 可选</span></span><br><span class="line">			<span class="comment">// #pragma surface name 声明一个以name为名字的函数表面shader； </span></span><br><span class="line">			<span class="comment">// #pragma vertex name 声明一个个以name为名字的函数的顶点程序 </span></span><br><span class="line">			<span class="comment">// #pragma fragment name- 声明一个个以name为名字的函数的片段程序。 </span></span><br><span class="line">			<span class="comment">// #pragma fragmentoption option - 添加选项到编译的OpenGL 片段程序。 通过 ARB 片段程序 可以查询到所允许的规范的选项列表。 这个指令对顶点程序或者不是以OpenGL为编译目标的程序无效。 </span></span><br><span class="line">			<span class="comment">// #pragma target name -着色器目标编译。详情请参考 着色器目标。 </span></span><br><span class="line">			<span class="comment">// #pragma only_renderers space separated names - 仅用给定的渲染器编译着色器。默认情况下用所有的渲染器都编译着色器。 </span></span><br><span class="line">			<span class="comment">// #pragma exclude_renderers space separated names -不用给定的渲染器编译着色器。 默认情况下用所有的渲染器都编译着色器。 </span></span><br><span class="line">			<span class="comment">// #pragma glsl - 用桌面OpenGL平台编译着色器时，转换成GLSL里面的Cg/HLSL(而不是默认设置的ARB顶点/片段程序)。</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// #pragma surface surf Standard fullforwardshadows </span></span><br><span class="line">			<span class="comment">// Use shader model 3.0 target, to get nicer looking lighting </span></span><br><span class="line">			<span class="comment">// #pragma target 3.0 //编译着色器模式3.0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			<span class="comment">// Mac上的位置 /Applications/Unity/Unity.app/Contents/CGIncludes</span></span><br><span class="line">			<span class="comment">// Win上的位置 Unity的安装路径／Data／CGIncludes</span></span><br><span class="line">			<span class="meta">#include "UnityCG.cginc"</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// 结构体</span></span><br><span class="line">			struct appdata</span><br><span class="line">			&#123;</span><br><span class="line">				float4 vertex : POSITION;</span><br><span class="line">				float2 uv : TEXCOORD0;</span><br><span class="line">			&#125;;</span><br><span class="line">			<span class="comment">// 结构体</span></span><br><span class="line">			struct v2f</span><br><span class="line">			&#123;</span><br><span class="line">				float2 uv : TEXCOORD0;</span><br><span class="line">				float4 vertex : SV_POSITION;</span><br><span class="line">			&#125;;</span><br><span class="line"></span><br><span class="line">			<span class="type">sampler2D</span> _MainTex;</span><br><span class="line">			float4 _MainTex_ST;</span><br><span class="line">			<span class="comment">// 顶点入口函数</span></span><br><span class="line">			v2f vert (appdata v)</span><br><span class="line">			&#123;</span><br><span class="line">				v2f o;</span><br><span class="line">				<span class="comment">// 内置函数http://blog.csdn.net/qingshui37/article/details/51476404</span></span><br><span class="line">				o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">				o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">				<span class="keyword">return</span> o;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 片元入口函数</span></span><br><span class="line">			fixed4 frag (v2f i) : SV_Target</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">// sample the texture</span></span><br><span class="line">				fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">return</span> col;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 结束CG程序</span></span><br><span class="line">			ENDCG</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	Fallback "VertexLit" //返回值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝饮料<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.JPG">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.JPG">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://xingjiawei.cn/2017/12/22/UnityShader学习笔记-UnityShader结构/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/12/20/设计模式-单例/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式-单例</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+    <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2151169"></script>
+<!-- UY END -->
+    
+  
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -263,9 +378,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
